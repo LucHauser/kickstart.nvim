@@ -696,8 +696,23 @@ require('lazy').setup({
             },
           },
         },
+
+        -- ominsharp for c-sharp
+        omnisharp = {
+          cmd = {
+            vim.fn.stdpath 'data' .. '/mason/packages/omnisharp/omnisharp',
+            '--languageserver',
+            '--hostPID',
+            tostring(vim.fn.getpid()),
+          },
+          capabilities = capabilities,
+          on_attach = function(client, bufnr)
+            -- Optional: custom LSP keybindings or config
+          end,
+        },
       }
 
+      --
       -- Ensure the servers and tools above are installed
       --
       -- To check the current status of installed tools and/or manually install
