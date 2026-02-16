@@ -174,7 +174,6 @@ vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { desc = 'Toggle File Ex
 
 -- for compling and running c
 vim.api.nvim_set_keymap('n', '<leader>c', ':!gcc % -o %:r && ./%:r<CR>', { noremap = true, silent = true })
-
 -- Keymap for latex snipptets
 
 -- Clear highlights on search when pressing <Esc> in normal mode
