@@ -172,6 +172,9 @@ vim.o.confirm = true
 -- Leader keymap for neo-tree file-explorer
 vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { desc = 'Toggle File Explorer' })
 
+-- for compling and running c
+vim.api.nvim_set_keymap('n', '<leader>c', ':!gcc % -o %:r && ./%:r<CR>', { noremap = true, silent = true })
+
 -- Keymap for latex snipptets
 
 -- Clear highlights on search when pressing <Esc> in normal mode
@@ -676,7 +679,7 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
+        clangd = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
